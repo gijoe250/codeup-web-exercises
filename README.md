@@ -1,1 +1,1 @@
-# codeup-web-exercises
+# javascript-with-html
