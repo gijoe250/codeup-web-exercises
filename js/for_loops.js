@@ -30,14 +30,8 @@ showMultiplicationTable(7);
 // 24 is even
 // 199 is odd
 // ...
-/** Don't modify the following line, it generates a random number between 1 and 3
- and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
- Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-*/
 for (let i=0; i<10; i++){
-    let random = Math.floor((Math.random() * 200) +20);
+    let random = randomNumber(20,200);
     let evenOrOdd;
     if (isEven(random)){
         evenOrOdd = "even";

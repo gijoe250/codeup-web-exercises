@@ -8,3 +8,7 @@ function applyDiscount(price, discount){
 function isEven(num){
     return (num % 2 == 0);
 }
+//get random value between min and max
+function randomNumber(min, max) {
+    return (Math.floor(Math.random() * (max+1 - min)) + min);
+}
