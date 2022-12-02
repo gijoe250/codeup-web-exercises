@@ -10,7 +10,7 @@
 <body>
 
 <h1>Introduction to Arrays</h1>
-
+<script src="./js/useful-functions.js"></script>
 <script>
 
   "use strict";
@@ -66,11 +66,11 @@
 
   // 3
 
-  console.log(students[students.length - 1]);
-
-
-
-  console.log(students[100]);
+  // console.log(students[students.length - 1]);
+  //
+  //
+  //
+  // console.log(students[100]);
 
 
 
@@ -123,12 +123,12 @@
       2. Practice console logging each classmate separately.
       3. Reassign the second element to be the string "Justin".
    */
-  console.log("First Exercise");
-  let classmates = [ "John", "Jason", "Alexia"];
-  classmates.forEach(function (classmate) {
-    console.log(classmate);
-  });
-  classmates[1] = "Justin";
+  // console.log("First Exercise");
+  // let classmates = [ "John", "Jason", "Alexia"];
+  // classmates.forEach(function (classmate) {
+  //   console.log(classmate);
+  // });
+  // classmates[1] = "Justin";
 
   // ============================= For Loop
 
@@ -267,32 +267,69 @@
       1. Loop through your classmates array with a for loop.
       2. Loop through your classmates array with a forEach loop.
    */
-  console.log("Second Exercise 1");
-  for (let i=0; i<classmates.length; i++){
-    console.log(classmates[i]);
-  }
-
-  console.log("Second Ex 2");
-  classmates.forEach(function (classmate) {
-    console.log(classmate);
-  });
+  // console.log("Second Exercise 1");
+  // for (let i=0; i<classmates.length; i++){
+  //   console.log(classmates[i]);
+  // }
+  //
+  // console.log("Second Ex 2");
+  // classmates.forEach(function (classmate) {
+  //   console.log(classmate);
+  // });
   // ============================= ARRAYS AND FUNCTIONS EXAMPLES
 
   // !! Write a function, logNums, that takes in an array and logs each number in the array !!
   // !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
   // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
-  console.log("3rd Ex 1");
-  logNums(classmates);
-  console.log("3rd Ex 2");
-  console.log(returnLongString((classmates)));
-  console.log("3rd Ex 3");
-  console.log(returnArrSum([2,5,8]));
+  // console.log("3rd Ex 1");
+  // logNums(classmates);
+  // console.log("3rd Ex 2");
+  // console.log(returnLongString((classmates)));
+  // console.log("3rd Ex 3");
+  // console.log(returnArrSum([2,5,8]));
+
+//   TODO:
+  //    Create an array of 10 foods.
+  let foods = ["apple", "orange", "beef", "fish", "oyster", "pizza", "spaghetti", "ramen", "candy", "broccoli"];
+  //    Write using a for loop, write logic that will log only the foods that start with a vowel.
+  let foodStartsWithVowel = [];
+  for (let i=0; i<foods.length; i++){
+    if (isVowel(foods[i][0])){
+      foodStartsWithVowel.push(foods[i]);
+    }
+  }
+  console.log(foodStartsWithVowel + " with a for loop");
+
+  //    Write another solution using a forEach loop.
+  foodStartsWithVowel = [];
+  foods.forEach(function (food){
+    if (isVowel(food[0])){
+      foodStartsWithVowel.push(food);
+    }
+  })
+  console.log(foodStartsWithVowel + " with a for each loop");
+
+//   TODO:
+  //    Write a function, addEvenNums,
+  //    that takes in an array of numbers
+  //    and adds up only the even numbers in the array and
+  //    returns the sum of the even numbers.
+  //    Assume any array inputs will only contain valid number elements and be non-empty.
+//   TODO: Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
+// ‘input num in input array’ if the second argument is an element in the first argument array
+//   otherwise, the function should return the string ‘input num NOT in input array’ (edited)
+//
+  console.log("Extra Bonus Ex 1");
+  let fruits = ["apple", "banana", "orange", "apple", "pineapple"];
+  console.log(allIndexesOf(fruits, "apple"));
+  console.log(allIndexesOf(fruits, "poop"));
 
   function logNums(array){
   array.forEach(function (element){
     console.log(array.indexOf(element));
     });
   }
+
   function returnLongString(array){
     let longString = "";
     array.forEach(function (element){
@@ -300,6 +337,7 @@
     });
     return longString;
   }
+
   function returnArrSum(arrayValues){
     let sum = 0;
     arrayValues.forEach(function (element){
@@ -308,6 +346,17 @@
     });
     return sum;
   }
+
+  function allIndexesOf(arraySearch, argSearch){
+    let foundItems = [];
+    for (let i=0; i<arraySearch.length; i++){
+      if(arraySearch[i] === argSearch){
+        foundItems.push(i);
+      }
+    }
+    return foundItems;
+  }
+
 
 </script>
 
