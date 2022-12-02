@@ -315,10 +315,32 @@
   //    and adds up only the even numbers in the array and
   //    returns the sum of the even numbers.
   //    Assume any array inputs will only contain valid number elements and be non-empty.
-//   TODO: Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
-// ‘input num in input array’ if the second argument is an element in the first argument array
-//   otherwise, the function should return the string ‘input num NOT in input array’ (edited)
-//
+  function addEvenNums(arrayNums){
+    let evenSum = 0;
+    arrayNums.forEach(function (num) {
+      if (isEven(num)){
+        evenSum += num;
+      }
+    })
+    return evenSum;
+  }
+  let arrayOfNums = [1,2,3,4,5,6,7,8,9];
+  console.log(addEvenNums(arrayOfNums));
+//   TODO:
+  //    Write a function, checkIfNumInArray,
+  //    that takes in an array of numbers and a number
+  //    and returns the string ‘input num in input array’ if the second argument is an element in the first argument array
+  //    otherwise, the function should return the string ‘input num NOT in input array’ (edited)
+  function checkIfNumInArray(arrayNums, num){
+    if(arrayNums.includes(num)){
+      return "input num in input array";
+    }
+    return "input num NOT in input array";
+  }
+
+  console.log(checkIfNumInArray(arrayOfNums, 3));
+
+
   console.log("Extra Bonus Ex 1");
   let fruits = ["apple", "banana", "orange", "apple", "pineapple"];
   console.log(allIndexesOf(fruits, "apple"));
