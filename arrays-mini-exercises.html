@@ -123,10 +123,11 @@
       2. Practice console logging each classmate separately.
       3. Reassign the second element to be the string "Justin".
    */
+  console.log("First Exercise");
   let classmates = [ "John", "Jason", "Alexia"];
   classmates.forEach(function (classmate) {
     console.log(classmate);
-  })
+  });
   classmates[1] = "Justin";
 
   // ============================= For Loop
@@ -164,7 +165,7 @@
   // console.log(pies);
 
   // !! How could we print out every other pie from the beginning of the array to the end? !!
-
+  // Ans: make a conditional based on the index value. Only print if odd.
 
   // ============================= ForEach Loop
 
@@ -266,13 +267,47 @@
       1. Loop through your classmates array with a for loop.
       2. Loop through your classmates array with a forEach loop.
    */
+  console.log("Second Exercise 1");
+  for (let i=0; i<classmates.length; i++){
+    console.log(classmates[i]);
+  }
 
+  console.log("Second Ex 2");
+  classmates.forEach(function (classmate) {
+    console.log(classmate);
+  });
   // ============================= ARRAYS AND FUNCTIONS EXAMPLES
 
   // !! Write a function, logNums, that takes in an array and logs each number in the array !!
   // !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
   // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
+  console.log("3rd Ex 1");
+  logNums(classmates);
+  console.log("3rd Ex 2");
+  console.log(returnLongString((classmates)));
+  console.log("3rd Ex 3");
+  console.log(returnArrSum([2,5,8]));
 
+  function logNums(array){
+  array.forEach(function (element){
+    console.log(array.indexOf(element));
+    });
+  }
+  function returnLongString(array){
+    let longString = "";
+    array.forEach(function (element){
+      longString += element;
+    });
+    return longString;
+  }
+  function returnArrSum(arrayValues){
+    let sum = 0;
+    arrayValues.forEach(function (element){
+      //can add an if conditional to check if type is number
+      sum += element;
+    });
+    return sum;
+  }
 
 </script>
 
