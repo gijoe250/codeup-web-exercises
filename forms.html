@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+  <form method="POST" action="https://request-inspector.glitch.me/">
+      <div>
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text">
+          <br>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password">
+          <br>
+          <input type="submit" value="Login">
+      </div>
+      <br>
+      <div>
+          <label for="bio"><strong>Biography</strong>:</label>
+          <br>
+          <textarea name="Bio" id="bio"></textarea>
+      </div>
+      <section>
+        <div>
+            <strong>How did you hear about us?</strong>
+            <br>
+            <label for="billboard">
+                <input id="billboard" type="checkbox" name="noUsQ" value="billboard">billboard
+            </label><br>
+            <label for="radio">
+                <input id="radio" type="checkbox" name="noUsQ" value="radio advertisment">radio advertisment
+            </label><br>
+            <label for="internet">
+                <input id="internet" type="checkbox" name="noUsQ" value="internet advertisment">internet advertisment
+            </label><br>
+            <label for="other">
+                <input id="other" type="checkbox" name="noUsQ" value="other">other
+            </label><br>
+        </div>
+      </section>
+      <br>
+      <section>
+          <div>
+              <label for="browser"><strong>What browser do you use?</strong></label>
+              <br>
+              <select id="browser" name="broswer">
+                  <option></option>
+                  <option value="google">Google</option>
+                  <option value="firefox">Firefox</option>
+                  <option value="safari">Safari</option>
+              </select>
+          </div>
+      </section>
+      <div>
+          <input type="submit">
+      </div>
+  </form>
+</body>
+</html>
