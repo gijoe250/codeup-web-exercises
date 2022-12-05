@@ -169,35 +169,58 @@
 
 
   // !! MINI EXERCISE 2 !!
-  // const users = [
-  //     {
-  //         givenName: 'Sam',
-  //         age: 21
-  //     },
-  //     {
-  //         givenName: 'Cathy',
-  //         age: 34
-  //     },
-  //     {
-  //         givenName: 'Karen',
-  //         age: 43
-  //     }
-  // ];
-
+  const users = [
+      {
+          givenName: 'Sam',
+          age: 21
+      },
+      {
+          givenName: 'Cathy',
+          age: 34
+      },
+      {
+          givenName: 'Karen',
+          age: 43
+      }
+  ];
+  // const originalObj = { name: 'cloning' };
+  // const clonedObj = Object.assign({}, obj);
+  // originalObj === clonedObj //false
   // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
-
+let concatString = '';
+  users.forEach(function (user){
+  concatString += user.givenName + " ";
+})
+  console.log(concatString);
   // 2. Change the names of all users to "John Doe"
 
+  users.forEach(function (user){
+    user.givenName = "John Doe";
+  })
+  console.log(users);
   // 3. Increase the current age of all users by 1
 
+  users.forEach(function (user){
+    user.age++;
+  })
+  console.log(users);
   // Can you accomplish each step using iteration?
 
 
   // Extras...
   // log the total of all the ages
+  let totalAge = 0, count = 0;
+  users.forEach(function (user){
+    totalAge += user.age;
+    count++;
+  })
+  console.log(totalAge);
   // log the average age of all users
+  console.log(totalAge/count);
   // log all the user information in the following format...
-
+  users.forEach(function (user){
+    console.log(`user: ${user.givenName} | age: ${user.age}`)
+  })
   /*
       user: Sam | age: 21
       user: Cathy | age: 34
@@ -205,7 +228,13 @@
    */
 
   // log the name of the longest given name of a user
-
+let longestName = "";
+users.forEach(function (user){
+  if(longestName.length < user.givenName.length){
+    longestName = user.givenName;
+  }
+})
+  console.log(longestName);
 
 
 
