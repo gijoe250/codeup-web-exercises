@@ -218,7 +218,16 @@
       6. Log everyone in the row in a single string separated by spaces
       7. Log everyone in the row in a single string separated by underscores
    */
-
+let myRow = ["Joe", "John", "Songju", "Rando"];
+let newRow1 = Array.from(myRow);
+let newRow2 = Array.from(myRow);
+  console.log(myRow + " 1");
+  console.log(newRow1.sort() + " 2");
+  console.log(newRow1.reverse() + " 3");
+  console.log(newRow2.reverse() + " 4");
+  console.log(myRow.slice(0,2) + " 5");
+  console.log(myRow.join(' ') + " 6");
+  console.log(myRow.join('_') + " 7");
 
 
 
