@@ -33,3 +33,24 @@ ul {
 ol {
     list-style: upper-roman;
 }
+
+th, td {
+    padding: 15px;
+    font-size: large;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: darkred;
+}
+
+a:hover {
+    color: rosybrown;
+}
+
+a:active {
+    color: yellow;
+}
