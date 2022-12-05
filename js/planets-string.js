@@ -27,6 +27,7 @@
     console.log(planetsString);
     planetsString = planetsString.replaceAll("<br>", "</li><li>");
     console.log(planetsString);
-    planetsString = "<ul>\n\t<li>" + planetsString + "</li>\n</ul>";
+    planetsString = "<ul><li>" + planetsString + "</li></ul>";
     console.log(planetsString);
+    document.write(planetsString)
 })();

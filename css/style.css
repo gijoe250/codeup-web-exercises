@@ -6,3 +6,30 @@ this file is named "style.css" and is in a directory named "css"
     color: blue;
     text-decoration: underline;
 }
+
+.center {
+    text-align: center;
+}
+
+h3, h4 {
+    color: green;
+    text-decoration: underline;
+}
+
+body {
+    background-color: yellowgreen;
+    background-image: url("./../img/codeUp.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    font-family: "Audiowide", Papyrus, serif;
+    /*font-family: "Kenia", sans-serif;*/
+}
+
+ul {
+    list-style: circle;
+}
+
+ol {
+    list-style: upper-roman;
+}
