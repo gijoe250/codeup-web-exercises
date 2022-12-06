@@ -159,6 +159,7 @@
         Title: ${book.title} \n
         Author: ${book.author.firstName} ${book.author.lastName} \n
         --- \n`)
+        return book;
     }
     /**
      * Bonus:
