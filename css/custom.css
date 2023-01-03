@@ -22,6 +22,10 @@ nav a {
     display: flex;
     flex-direction: row-reverse;
 }
+
+.card p{
+    margin: 1em;
+}
 .tab-pane {
 
     border-left: 1px solid #ddd;
