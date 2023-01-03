@@ -5,15 +5,16 @@ body {
     margin: 0;
 }
 
+nav {
+    display: inherit;
+    align-items: center;
+}
 nav a {
     text-decoration: none;
     color: black;
     display: inline-block;
     font-size: small;
-    margin: 0;
-    padding: 0;
 }
-
 .card {
     margin: 1em;
 }
@@ -26,6 +27,7 @@ nav a {
 .card p{
     margin: 1em;
 }
+
 .tab-pane {
 
     border-left: 1px solid #ddd;
@@ -33,7 +35,3 @@ nav a {
     border-bottom: 1px solid #ddd;
     border-radius: 0px 0px 5px 5px;
 }
-
-/*.nav-tabs {*/
-/*    margin-bottom: 0;*/
-/*}*/
