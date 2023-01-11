@@ -43,15 +43,25 @@
 
         document.getElementById('btn1').addEventListener('click', mainHeaderChange);
 
+        let onOff = 0;
+
         let subHeaderBlue = function (event){
             // TODO: Uncomment the next line and get the sub header element by id
             var subHeader = document.getElementById("sub-header");
 
-            // TODO: Set the text color of subHeader to blue
-            subHeader.setAttribute("style", "color: blue");
+            if( onOff === 0){
+                // TODO: Set the text color of subHeader to blue
+                subHeader.setAttribute("style", "color: blue");
+                onOff = 1;
+            }
+            else if(onOff === 1){
+                subHeader.setAttribute("style", "color: black");
+                onOff = 0;
+            }
         }
 
         document.getElementById('btn2').addEventListener('click', subHeaderBlue);
+
 
         let listOddGrey = function (event){
             // TODO: Uncomment the next line and get all list items
