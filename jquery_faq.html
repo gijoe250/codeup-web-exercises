@@ -43,6 +43,31 @@
     hydrate at parks 10
   </dd>
 </dl>
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+  <li>Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+  <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+  <li>Abilene</li>
+  <li>Big Bend</li>
+  <li>Choke Canyon</li>
+  <li>Davis Mountains</li>
+  <li>Enchanted Rock</li>
+</ul>
+<h3>Cool Places SA</h3>
+<ul id="cool-places">
+  <li>Mirror Maze</li>
+  <li>Alamo</li>
+  <li>Friedrich Hike</li>
+  <li>Karaoke place</li>
+  <li>Bowling</li>
+</ul>
+<button type="button" id="liYellowBG">Primary</button>
 <script src="./js/jquery-3.6.3.js"></script>
 <script>
   "use strict";
@@ -52,6 +77,29 @@
       $('dd').toggleClass('invisible');
     });
   });
+
+  $(document).ready(function() {
+    $('#liYellowBG').click(function() {
+      $('ul').each(function() {
+        $(this).children().last().css('background-color', 'yellow');
+      });
+    });
+  });
+
+  $(document).ready(function() {
+    $('h3').click(function() {
+      $(this).next().css('font-weight', 'bold');
+    });
+  });
+
+  $(document).ready(function() {
+    $('li').click(function() {
+      $(this).parent().each(function() {
+        $(this).children().first().css('color', 'blue');
+      });
+    });
+  });
+
 </script>
 </body>
 </html>
