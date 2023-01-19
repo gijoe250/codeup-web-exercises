@@ -42,20 +42,34 @@ $(function() {
     //
     // Remove your custom jQuery code from previous exercises.
     //
-    //     Using jQuery, set the font-size of all li elements to 20px.
-    $('li').css('font-size', '20px');
-    //
-    //     Craft selectors that highlight all the h1, p, and li elements.
-    $('h1').css('background-color', 'yellow');
-    $('p').css('background-color', 'yellow');
-    $('li').css('background-color', 'yellow');
-    //
-    //     Create a jQuery statement to alert the contents of your h1 element(s).
-    let h1Element = $('h1').html();
-    alert(h1Element);
-    //
-    //     Multiple Selectors
-    //
-    // Combine your selectors that highlight all the h1, p, and li elements.
-    $('h1, p, li').css('background-color', 'yellow');
+    // //     Using jQuery, set the font-size of all li elements to 20px.
+    // $('li').css('font-size', '20px');
+    // //
+    // //     Craft selectors that highlight all the h1, p, and li elements.
+    // $('h1').css('background-color', 'yellow');
+    // $('p').css('background-color', 'yellow');
+    // $('li').css('background-color', 'yellow');
+    // //
+    // //     Create a jQuery statement to alert the contents of your h1 element(s).
+    // let h1Element = $('h1').html();
+    // alert(h1Element);
+    // //
+    // //     Multiple Selectors
+    // //
+    // // Combine your selectors that highlight all the h1, p, and li elements.
+    // $('h1, p, li').css('background-color', 'yellow');
+    $('h1').click(function() {
+        $(this).css('background-color', 'red');
+    });
+    $('p').dblclick(function(e) {
+        $(this).css('font-size', '18px');
+    });
+    $('li').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'black');
+        }
+    );
 });
