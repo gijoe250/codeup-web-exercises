@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>miniExercise</title>
+</head>
+<body>
+<script src="../js/jquery-3.6.3.js"></script>
+<script>
+    // <!--// !! MINI-EXERCISE 1 !!-->
+    // <!--1. Make a GET request using jQuery AJAX to the Pokemon API (https://pokeapi.co/api/v2/pokemon/pikachu) and print out the response-->
+    // $.get("https://pokeapi.co/api/v2/pokemon/pikachu").done(function(data) {
+    //     console.log(data);
+    // });
+    // <!--2. Try making some requests to the Star Wars API. Can you find the director of `A New Hope`?-->
+    $.get("https://swapi.dev/api/films/\n").done(function(data){
+        //data is a returned object
+        //results is an object category
+        data.results.forEach(function (movie){
+            if (movie.title === "A New Hope"){
+                console.log(`i found the movie ${movie.title}`);
+                console.log(JSON.stringify(movie));
+            }
+        });
+    });
+    $.get("https://swapi.dev/api/films/\n").fail(function(){
+        console.log("I failed");
+    });
+    // <!--// ====================== EXPLORING JSON DATA-->
+    //
+    // <!--// !! MINI-EXERCISE 2 !!-->
+    //
+    // <!--/*-->
+    //
+    // <!--1. Print out various values from the orders.json file-->
+    // <!--2. Print various values from the Star Wars or Pokemon API-->
+    //
+    // <!--*/-->
+</script>
+</body>
+</html>
