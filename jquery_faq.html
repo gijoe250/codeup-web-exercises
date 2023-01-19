@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryFAQ</title>
+  <style>
+    .invisible {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+<dl>
+  <dt clase="toggle">Click me!</dt>
+  <dd class="invisible">
+    Nice 1
+  </dd>
+  <dd class="invisible">
+    Green 2
+  </dd>
+  <dd class="invisible">
+    Trees 3
+  </dd>
+  <dd class="invisible">
+    Cool 4
+  </dd>
+  <dd class="invisible">
+    Pass possible 5
+  </dd>
+  <dd class="invisible">
+    Texas has big bend 6
+  </dd>
+  <dd class="invisible">
+    Texas has guadalupe 7
+  </dd>
+  <dd class="invisible">
+    bring a hiking stick 8
+  </dd>
+  <dd class="invisible">
+    bring hiking shoes 9
+  </dd>
+  <dd class="invisible">
+    hydrate at parks 10
+  </dd>
+</dl>
+<script src="./js/jquery-3.6.3.js"></script>
+<script>
+  "use strict";
+
+  $(document).ready(function() {
+    $('dt').click(function(event) {
+      $('dd').toggleClass('invisible');
+    });
+  });
+</script>
+</body>
+</html>
