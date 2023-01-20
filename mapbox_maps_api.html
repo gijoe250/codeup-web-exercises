@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapporo Sushi Map</title>
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- Mapbox Geocoder Util Methods -->
+  <script src="./js/mapbox-geocoder-utils.js"></script>
+  <!-- Custom CSS -->
+  <style>
+    #map {
+      /* the width and height may be set to any size */
+      width: 100%;
+      height: 700px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>My Favorite Restaurant Location!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!--Keys-->
+<script src="./js/keys.js"></script>
+
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="./js/mapbox-geocoder-utils.js"></script>
+
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script>
+  mapboxgl.accessToken = keys.mapbox;
+  let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-98.4916, 29.4252]
+  });
+
+  // TODO: set a for loop to set all variables
+  // $.get("./data/restaurant.json").done(function(data){
+  //     data.forEach(function (place){
+  //
+  //     })
+  //   })
+  //   $('#products').html(html);
+  // });
+
+  let marker = new mapboxgl.Marker();
+  let sapporoPopup = new mapboxgl.Popup()
+          .setHTML("<p>Sapporo Sushi</p>");
+
+  // the  geocode method from mapbox-geocoder-utils.js
+  geocode("5638W Hausman Rd, San Antonio, TX 78249", keys.mapbox).then(function(result) {
+    console.log(result);
+    map.setCenter(result);
+    map.setZoom(18);
+    marker.setLngLat(result);
+    marker.addTo(map);
+    marker.setPopup(sapporoPopup);
+  });
+
+</script>
+</body>
+</html>
