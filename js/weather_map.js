@@ -20,14 +20,14 @@
                 let date = current.dt_txt.split(" ");
                 html += `
 <!--Weather info for day-->
-<div id="Location${i}" class="col-2">
-    <div class="card" style="width: 12rem;">
+<div id="Location ${i/4}" class="col-2">
+    <div class="card">
 <!--        weather date-->
         <div class="card-header">${date[0]}</div>
 <!--        min and max temp and weather image-->
         <div class="card-body">
 <!--            min and max temp-->
-            <h5 class="card-title">${current.main.temp_max}&#8457 / ${current.main.temp_min}&#8457</h5>
+            <h6 class="card-title">${current.main.temp_max}&#8457 / ${current.main.temp_min}&#8457</h6>
 <!--            weather image-->
             <p class="card-text">
                 <img src="http://openweathermap.org/img/w/${current.weather[0].icon}.png">
