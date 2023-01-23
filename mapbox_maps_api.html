@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<h1>My Favorite Restaurant Location!</h1>
+<h1>My Favorite Restaurant Locations!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
@@ -46,26 +46,26 @@
   });
 
   // TODO: set a for loop to set all variables
-  // $.get("./data/restaurant.json").done(function(data){
-  //     data.forEach(function (place){
-  //
-  //     })
-  //   })
-  //   $('#products').html(html);
-  // });
+  $.get("./data/restaurant.json").done(function(data){
+      data.forEach(function (place){
+        let marker = new mapboxgl.Marker();
+        let sapporoPopup = new mapboxgl.Popup()
+                .setHTML(`
+                        <p>${place.name}</p>
+                        <p>${place.why}</p>
+                        <p>${place.favorite}</p>
+                        `);
 
-  let marker = new mapboxgl.Marker();
-  let sapporoPopup = new mapboxgl.Popup()
-          .setHTML("<p>Sapporo Sushi</p>");
-
-  // the  geocode method from mapbox-geocoder-utils.js
-  geocode("5638W Hausman Rd, San Antonio, TX 78249", keys.mapbox).then(function(result) {
-    console.log(result);
-    map.setCenter(result);
-    map.setZoom(18);
-    marker.setLngLat(result);
-    marker.addTo(map);
-    marker.setPopup(sapporoPopup);
+        // the  geocode method from mapbox-geocoder-utils.js
+        geocode(`${place.address}`, keys.mapbox).then(function(result) {
+          console.log(result);
+          map.setCenter(result);
+          map.setZoom(7);
+          marker.setLngLat(result);
+          marker.addTo(map);
+          marker.setPopup(sapporoPopup);
+        });
+      })
   });
 
 </script>

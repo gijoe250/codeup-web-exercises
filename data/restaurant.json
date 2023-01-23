@@ -1,14 +1,20 @@
 [
   {
     "name": "Sapporo Sushi",
+    "why": "It has great tasting sushi that are huge and still reasonably priced. Dont get the Ramen. Only sushi.",
+    "favorite": "The Monster Roll may be expensive, but the combination that is presented is soooooo mouth watering",
     "address": "5638 W Hausman Rd, San Antonio, TX 78249"
   },
   {
     "name": "Snow ball Rice Ball",
+    "why": "I love rice balls! You may only get 3, but do not underestimate it! They are both tasty and filling!",
+    "favorite": "Combo3 2 spicy tuna rice ball and one spicy salmon rice ball",
     "address": "6929 Airport Blvd, Austin, TX 78752"
   },
   {
     "name": "The Cherrity Bar",
+    "why": "I love the Ramen, love the charred edamame, and love the drinks!",
+    "favorite": "My favorite thing here is the alcoholic drinks that give money to charity",
     "address": "302 Montana St, San Antonio, TX 78203"
   }
 ]
