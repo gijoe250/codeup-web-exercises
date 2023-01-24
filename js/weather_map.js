@@ -55,4 +55,41 @@
         console.log(status);
         console.log(error);
     });
+
+    // Map Section
+
+    mapboxgl.accessToken = keys.mapbox;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+
+    let marker = new mapboxgl.Marker();
+
+    $.get("./data/locations.json").done(function(data){
+
+    // the  geocode method from mapbox-geocoder-utils.js
+        geocode(`${data[0].address}`, keys.mapbox).then(function(result) {
+            map.setCenter(result);
+            map.setZoom(10);
+            marker.setLngLat(result);
+            marker.addTo(map);
+            marker.setDraggable(true);
+        });
+    });
+
+    marker.on('dragend', onDragEnd);
+
+    function onDragEnd() {
+        let lngLat = marker.getLngLat();
+        map.setCenter(lngLat);
+        map.setZoom(10);
+        // console.log(`${lngLat.lng} and ${lngLat.lat}`);
+        // reverseGeocode( {lng: -96.79, lat: 32.77}, keys.mapbox).then(function(result) {
+        //     map.setCenter(lngLat);
+        //     map.setZoom(10);
+        // });
+    }
 })();
