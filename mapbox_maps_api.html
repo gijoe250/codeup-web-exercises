@@ -45,7 +45,6 @@
     center: [-98.4916, 29.4252]
   });
 
-  // TODO: set a for loop to set all variables
   $.get("./data/restaurant.json").done(function(data){
       data.forEach(function (place){
         let marker = new mapboxgl.Marker();
