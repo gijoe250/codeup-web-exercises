@@ -9,18 +9,22 @@
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
+
 //Declares Map Marker
     let marker = new mapboxgl.Marker();
+
 //Sets Map and Weather to San Antonio Location
     $.get("./data/locations.json").done(function(data){
         setMapMarker(data[0].address);
     });
 
+//When the "find" button is clicked, will update map based on searched location
     $('#searchButton').click(function(e) {
         e.preventDefault();
         setMapMarker($('#inputBox').val());
     });
 
+//Updates marker and location when the marker is dragged
     marker.on('dragend', onDragEnd);
 
     /** function onDragEnd
