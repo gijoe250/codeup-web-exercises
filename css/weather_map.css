@@ -8,3 +8,9 @@
     width: 100%;
     height: 700px;
 }
+
+/* Body */
+body{
+    background-image: url(./../img/starrySky.jpeg);
+    background-color: black;
+}
