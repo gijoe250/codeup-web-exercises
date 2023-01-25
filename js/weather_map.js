@@ -70,7 +70,7 @@
         for (let i = 0; i < data.list.length; i += 8) {
             let current = data.list[i];
             let date = current.dt_txt.split(" ");
-            html += cardHTML(current, date, i);
+            html = html + cardHTML(current, date, i);
         }
         $('#currentLocation').html(html);
     }
