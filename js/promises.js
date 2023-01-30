@@ -7,7 +7,15 @@
     $('#searchButton').click(async function(e) {
         e.preventDefault();
         userInfo = await getUserName($('#inputBox').val());
-        console.log(userInfo[0].created_at);
+
+        const date = new Date(userInfo[0].created_at);
+
+        console.log(date);
+        console.log(date.toLocaleString('en-US',
+                {
+                timeZone: 'CST',
+            }),
+        );
         console.log(userInfo[0].actor.login);
     });
 
