@@ -13,31 +13,33 @@
     });
 
     $('#searchButton2').on('click', async (e) => {
-       try {
-           e.preventDefault();
-           let response = await fetch('./../data/profiles.json');
-           let data = await response.json();
-           let input = $('#inputBox2').val();
-           $('body').css('background-color', `${data[input]}`);
-           $("#inputBox2").val("");
-       }
-       catch (error){
-           console.log("it failed");
-           return error;
-       }
+        await changeBackground();
     });
 
     async function getUserName(userName){
         try{
             let response = await fetch(`https://api.github.com/users/${userName}/events`, {headers: {'Authorization': `token ${keys.gitHub}`}});
-            let data = await response.json()
+            let data = await response.json();
             return data;
         }
         catch (error){
+            console.log("it failed");
             return error;
         }
     }
 
-
+    async function changeBackground(){
+        try{
+            let response = await fetch('./../data/profiles.json');
+            let data = await response.json();
+            let input = $('#inputBox2').val();
+            $('body').css('background-color', `${data[input]}`);
+            $("#inputBox2").val("");
+        }
+        catch (error){
+            console.log("it failed");
+            return error;
+        }
+    }
 
 })();
